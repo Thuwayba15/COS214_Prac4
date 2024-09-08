@@ -1,4 +1,6 @@
 #include <exception>
+#include <string>
+#include <iostream>
 using namespace std;
 
 #ifndef __ExtraBarn_h__
@@ -12,13 +14,15 @@ class ExtraBarn;
 class ExtraBarn: public CropFieldDecorator
 {
 	private:
-		string extraBarnCapacity;
+		int extraCapacity;
 
 	public: 
+		ExtraBarn(CropField* field, int extraCapacity) : CropFieldDecorator(field), extraCapacity(extraCapacity) {}
 		void harvest();
 		int getLeftOverCapacity();
 		virtual void increaseProduction();
 		ExtraBarn();
+		int getTotalCapacity();
 };
 
 #endif

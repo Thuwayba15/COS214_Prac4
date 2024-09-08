@@ -6,13 +6,11 @@ using namespace std;
 
 #include "CropFieldDecorator.h"
 
-// class CropFieldDecorator;
-class FertilizedField;
-
 class FertilizedField: public CropFieldDecorator
 {
 
 	public: 
+		FertilizedField(CropField* field) : CropFieldDecorator(field) {}
 		void increaseProduction();
 		void harvest();
 		virtual int getLeftOverCapacity();
