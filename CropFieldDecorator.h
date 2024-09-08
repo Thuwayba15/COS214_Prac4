@@ -7,15 +7,15 @@ using namespace std;
 #include "CropField.h"
 
 // class CropField;
-class CropFieldDecorator;
 
 class CropFieldDecorator: public CropField
 {
-	private: 
+	protected: 
 		CropField* decoratedField;
 
 	public: 
-		// CropField* _unnamed_CropField_;
+		CropFieldDecorator(CropField* field) : decoratedField(field) {}	;
+
 		virtual void increaseProduction() = 0;
 		virtual void harvest() = 0;
 		virtual int getLeftOverCapacity() = 0;

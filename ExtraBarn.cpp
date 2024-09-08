@@ -1,19 +1,26 @@
 #include <exception>
+#include <iostream>
 using namespace std;
 
 #include "ExtraBarn.h"
 #include "CropFieldDecorator.h"
+#include "CropField.h"
 
 void ExtraBarn::harvest() {
-	throw "Not yet implemented";
+	 int harvested = decoratedField->harvestCrops();
+        std::cout << "Harvested " << harvested << " crops with extra storage." << std::endl;
 }
 
 int ExtraBarn::getLeftOverCapacity() {
-	throw "Not yet implemented";
+	 return decoratedField->getTotalCapacity() + extraCapacity - decoratedField->harvestCrops();
 }
 
 void ExtraBarn::increaseProduction() {
-	throw "Not yet implemented";
+	
+}
+
+int ExtraBarn::getTotalCapacity(){
+	 return decoratedField->getTotalCapacity() + extraCapacity;
 }
 
 // ExtraBarn::ExtraBarn() {
