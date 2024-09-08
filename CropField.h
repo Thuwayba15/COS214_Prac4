@@ -12,7 +12,6 @@ using namespace std;
 // class CropFieldDecorator;
 class SoilState;
 // class FarmUnit;
-class CropField;
 
 class CropField: public FarmUnit
 {
@@ -26,7 +25,7 @@ class CropField: public FarmUnit
 
 	public: 
 		CropField(const std::string& type, int capacity, SoilState* state);
-		~CropField();
+		virtual ~CropField();
 		int getTotalCapacity();
 		std::string getCropType();
 		std::string getSoilStateName();
