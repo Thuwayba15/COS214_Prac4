@@ -1,19 +1,25 @@
 #include <exception>
 #include <string>
+#include <iostream>
 using namespace std;
 
 #include "DrySoil.h"
 #include "FloodedSoil.h"
+#include "FruitfulSoil.h"
 
 int DrySoil::harvestCrops(CropField* cropField) {
-	throw "Not yet implemented";
+	int harvestAmount = cropField->getTotalCapacity() / 3;  // 1/3 of capacity in DrySoil
+    std::cout << "Harvesting crops from dry soil: " << harvestAmount << " units." << std::endl;
+    return harvestAmount;
 }
 
 void DrySoil::rain(CropField* cropField) {
-	throw "Not yet implemented";
+	std::cout << "Rain fell on dry soil, soil becomes fruitful." << std::endl;
+    cropField->setSoilState(new FruitfulSoil());
+
 }
 
 string DrySoil::getName() {
-	throw "Not yet implemented";
+	return "Dry";
 }
 

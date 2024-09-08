@@ -1,19 +1,22 @@
 #include <exception>
 #include <string>
+#include <iostream>
 using namespace std;
 
 #include "SoilState.h"
 #include "CropField.h"
 
 int SoilState::harvestCrops(CropField* aCropField) {
-	throw "Not yet implemented";
+	std::cout<<"Waiting"<<std::endl;
+	return 0;
 }
 
 void SoilState::rain(CropField* aCropField) {
-	throw "Not yet implemented";
+	std::cout<<"Waiting"<<std::endl;
 }
 
 string SoilState::getName() {
-	throw "Not yet implemented";
+	std::cout<<"Waiting"<<std::endl;
+	return "";
 }
 

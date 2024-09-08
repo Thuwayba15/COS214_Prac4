@@ -7,11 +7,12 @@ using namespace std;
 
 // #include "FloodedSoil.h"
 #include "CropField.h"
+#include "SoilState.h"
 
 class FloodedSoil;
 class DrySoil;
 
-class DrySoil
+class DrySoil : public SoilState
 {
 	public: 
 		// FloodedSoil* _unnamed_FloodedSoil_;

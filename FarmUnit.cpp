@@ -18,11 +18,11 @@ string FarmUnit::getSoilStateName() {
 	throw "Not yet implemented";
 }
 
-void FarmUnit::attach(Truck* aTruck) {
+void FarmUnit::attach(Truck* truck) {
 	throw "Not yet implemented";
 }
 
-void FarmUnit::detach(Truck* aTruck) {
+void FarmUnit::detach(Truck* truck) {
 	throw "Not yet implemented";
 }
 

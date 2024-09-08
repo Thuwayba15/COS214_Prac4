@@ -23,7 +23,7 @@ class FarmUnit
 
 	public: 
 		// Farmland* unnamed_Farmland;
-		Truck* unnamed_Truck;
+		// Truck* unnamed_Truck;
 
 	public: 
 		virtual int getTotalCapacity() = 0;
@@ -34,7 +34,7 @@ class FarmUnit
 		void notify();
 		virtual ~FarmUnit(){};
 
-	FarmUnit();
+	// FarmUnit();
 };
 
 #endif
