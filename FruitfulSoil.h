@@ -13,11 +13,10 @@ class FruitfulSoil;
 class FruitfulSoil: public SoilState
 {
 
-	public: int harvestCrops(CropField* aCropField);
-
-	public: void rain(CropField* aCropField);
-
-	public: string getName();
+	public: 
+		int harvestCrops(CropField* cropField);
+		void rain(CropField* cropField);
+		string getName();
 };
 
 #endif

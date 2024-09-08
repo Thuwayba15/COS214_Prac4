@@ -30,7 +30,7 @@ void FarmUnit::notify() {
 	throw "Not yet implemented";
 }
 
-FarmUnit::FarmUnit() {
-	_farmName = string;
-}
+// FarmUnit::FarmUnit() {
+// 	farmName = string;
+// }
 

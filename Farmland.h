@@ -9,6 +9,7 @@ using namespace std;
 #include "FarmUnit.h"
 // #include "BreadthFirstFarmIterator.h"
 // #include "DepthFirstFarmIterator.h"
+#include "FarmIterator.h"
 
 class Client;
 // class FarmUnit;
@@ -18,23 +19,20 @@ class Farmland;
 
 class Farmland: public FarmUnit
 {
-	private: FarmUnit* _farmUnits;
-	public: Client* _unnamed_Client_;
-	public: FarmUnit* _unnamed_FarmUnit_;
-	public: BreadthFirstFarmIterator* _unnamed_BreadthFirstFarmIterator_;
-	public: DepthFirstFarmIterator* _unnamed_DepthFirstFarmIterator_;
+	private: FarmUnit* farmUnits;
+	public: Client* unnamed_Client_;
+	public: FarmUnit* unnamed_FarmUnit_;
+	public: BreadthFirstFarmIterator* unnamed_BreadthFirstFarmIterator_;
+	public: DepthFirstFarmIterator* unnamed_DepthFirstFarmIterator_;
 
-	public: FarmUnit* addUnit();
-
-	public: FarmUnit removeUnit();
-
-	public: int getTotalCapacity();
-
-	public: string getCropType();
-
-	public: string getSoilStateName();
-
-	public: FarmIterator* createIterator(string aType);
+	public: 
+		~Farmland();
+		FarmUnit* addUnit();
+		FarmUnit* removeUnit();
+		int getTotalCapacity();
+		string getCropType();
+		string getSoilStateName();
+		FarmIterator* createIterator(string type);
 };
 
 #endif

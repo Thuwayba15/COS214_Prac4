@@ -12,22 +12,20 @@ class Barn;
 
 class Barn: public FarmUnit
 {
-	private: int _storageCapacity;
-	private: int _currentAmount;
-	private: string _barnType;
-	private: string _barnLocation;
+	private: 
+		int storageCapacity;
+		int currentAmount;
+		string barnType;
+		string barnLocation;
 
-	public: int getTotalCapacity();
-
-	public: void storeCrop();
-
-	public: void removeCrop();
-
-	public: void isFull();
-
-	public: virtual string getCropType();
-
-	public: virtual string getSoilStateName();
+	public: 
+		Barn(int capacity);
+		int getTotalCapacity();
+		void storeCrop();
+		void removeCrop();
+		void isFull();
+		// virtual string getCropType();
+		// virtual string getSoilStateName();
 };
 
 #endif
