@@ -9,16 +9,16 @@ using namespace std;
 // class CropField;
 class CropFieldDecorator;
 
-class CropFieldDecorator: public CropField
+__abstract class CropFieldDecorator: public CropField
 {
-	private: 
-		CropField* decoratedField;
+	private: CropField* _decoratedField;
+	public: CropField* _unnamed_CropField_;
 
-	public: 
-		// CropField* _unnamed_CropField_;
-		virtual void increaseProduction() = 0;
-		virtual void harvest() = 0;
-		virtual int getLeftOverCapacity() = 0;
+	public: virtual void increaseProduction() = 0;
+
+	public: virtual void harvest() = 0;
+
+	public: virtual int getLeftOverCapacity() = 0;
 };
 
 #endif

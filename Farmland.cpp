@@ -8,17 +8,11 @@ using namespace std;
 #include "BreadthFirstFarmIterator.h"
 #include "DepthFirstFarmIterator.h"
 
-// Farmland::~Farmland() {
-//     for (FarmUnit* unit : farmUnits) {
-//         delete unit;
-//     }
-// }
-
 FarmUnit* Farmland::addUnit() {
 	throw "Not yet implemented";
 }
 
-FarmUnit* Farmland::removeUnit() {
+FarmUnit Farmland::removeUnit() {
 	throw "Not yet implemented";
 }
 

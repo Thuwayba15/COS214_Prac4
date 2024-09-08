@@ -8,7 +8,7 @@ void ExtraBarn::harvest() {
 	throw "Not yet implemented";
 }
 
-int ExtraBarn::getLeftOverCapacity() {
+void ExtraBarn::getLeftOverCapacity() {
 	throw "Not yet implemented";
 }
 
@@ -16,7 +16,7 @@ void ExtraBarn::increaseProduction() {
 	throw "Not yet implemented";
 }
 
-// ExtraBarn::ExtraBarn() {
-// 	_extraBarnCapacity = int;
-// }
+ExtraBarn::ExtraBarn() {
+	_extraBarnCapacity = int;
+}
 

@@ -5,19 +5,21 @@ using namespace std;
 #define __FarmIterator_h__
 
 // #include "Client.h"
-#include "FarmUnit.h"
 
 class Client;
 class FarmIterator;
 
-class FarmIterator
+__abstract class FarmIterator
 {
-	public: 
-		// Client* _unnamed_Client_;
-		virtual FarmUnit* firstFarm() = 0;
-		virtual FarmUnit* next() = 0;
-		virtual bool isDone() = 0;
-		virtual FarmUnit* currentFarm() = 0;
+	public: Client* _unnamed_Client_;
+
+	public: virtual FarmUnit* firstFarm() = 0;
+
+	public: virtual FarmUnit* next() = 0;
+
+	public: virtual bool isDone() = 0;
+
+	public: virtual FarmUnit* currentFarm() = 0;
 };
 
 #endif

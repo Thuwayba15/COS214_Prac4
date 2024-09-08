@@ -5,10 +5,8 @@ using namespace std;
 #include "Barn.h"
 #include "FarmUnit.h"
 
-Barn::Barn(int capacity) : storageCapacity(capacity) {}
-
 int Barn::getTotalCapacity() {
-	 return storageCapacity;
+	throw "Not yet implemented";
 }
 
 void Barn::storeCrop() {
@@ -23,11 +21,11 @@ void Barn::isFull() {
 	throw "Not yet implemented";
 }
 
-// string Barn::getCropType() {
-// 	throw "Not yet implemented";
-// }
+string Barn::getCropType() {
+	throw "Not yet implemented";
+}
 
-// string Barn::getSoilStateName() {
-// 	throw "Not yet implemented";
-// }
+string Barn::getSoilStateName() {
+	throw "Not yet implemented";
+}
 
