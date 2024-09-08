@@ -1,5 +1,8 @@
 #include <exception>
 #include <string>
+#include <algorithm>
+#include <vector>
+#include <iostream>
 using namespace std;
 
 #include "Farmland.h"
@@ -8,33 +11,46 @@ using namespace std;
 #include "BreadthFirstFarmIterator.h"
 #include "DepthFirstFarmIterator.h"
 
-// Farmland::~Farmland() {
-//     for (FarmUnit* unit : farmUnits) {
-//         delete unit;
-//     }
-// }
+Farmland::Farmland(const std::string& name) : name(name) {}
 
-FarmUnit* Farmland::addUnit() {
-	throw "Not yet implemented";
+Farmland::~Farmland() {
+    for (FarmUnit* unit : farmUnits) {
+        delete unit;
+    }
 }
 
-FarmUnit* Farmland::removeUnit() {
-	throw "Not yet implemented";
+FarmUnit* Farmland::addUnit(FarmUnit* unit) {
+    farmUnits.push_back(unit);
+    return unit;
+}
+
+FarmUnit* Farmland::removeUnit(FarmUnit* unit) {
+    farmUnits.erase(std::remove(farmUnits.begin(), farmUnits.end(), unit), farmUnits.end());
+    return unit;
 }
 
 int Farmland::getTotalCapacity() {
-	throw "Not yet implemented";
+    int totalCapacity = 0;
+    for (FarmUnit* unit : farmUnits) {
+        totalCapacity += unit->getTotalCapacity();
+    }
+    return totalCapacity;
 }
-
 string Farmland::getCropType() {
-	throw "Not yet implemented";
+	std::cout<<"Farmland does not store crop type"<<std::endl;
 }
 
 string Farmland::getSoilStateName() {
-	throw "Not yet implemented";
+	std::cout<<"Farmland does not have a soil state"<<std::endl;
 }
 
-FarmIterator* Farmland::createIterator(string aType) {
-	throw "Not yet implemented";
-}
+// FarmIterator* Farmland::createIterator(string type) {
+//     if (type == "breadth-first") {
+//         return new BreadthFirstFarmIterator(this);
+//     } else if (type == "depth-first") {
+//         return new DepthFirstFarmIterator(this);
+//     } else {
+//         throw std::invalid_argument("Unknown iterator type!");
+//     }
+// }
 

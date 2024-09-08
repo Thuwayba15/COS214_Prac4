@@ -25,7 +25,9 @@ class CropField: public FarmUnit
 
 	public: 
 		CropField(const std::string& type, int capacity, SoilState* state);
+
 		CropField();
+
 		virtual ~CropField();
 		int getTotalCapacity();
 		std::string getCropType();

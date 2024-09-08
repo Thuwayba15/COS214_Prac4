@@ -8,24 +8,25 @@ using namespace std;
 #include "FarmUnit.h"
 
 // class FarmUnit;
-class Barn;
 
 class Barn: public FarmUnit
 {
 	private: 
 		int storageCapacity;
-		int currentAmount;
+		
 		string barnType;
 		string barnLocation;
 
 	public: 
-		Barn(int capacity);
+		int getRemainingCapacity() const;
+		int currentAmount;
+		Barn(int capacity, const string& type, const string& location);
 		int getTotalCapacity();
-		void storeCrop();
-		void removeCrop();
-		void isFull();
-		// virtual string getCropType();
-		// virtual string getSoilStateName();
+		void storeCrop(int amount);
+		void removeCrop(int amount);
+		bool isFull();
+		string getCropType();
+		string getSoilStateName();
 };
 
 #endif

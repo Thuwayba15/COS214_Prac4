@@ -1,5 +1,6 @@
 #include <exception>
 #include <string>
+#include <vector>
 using namespace std;
 
 #ifndef __Farmland_h__
@@ -11,24 +12,28 @@ using namespace std;
 // #include "DepthFirstFarmIterator.h"
 #include "FarmIterator.h"
 
-class Client;
-// class FarmUnit;
-class BreadthFirstFarmIterator;
-class DepthFirstFarmIterator;
-class Farmland;
+// class Client;
+// // class FarmUnit;
+// class BreadthFirstFarmIterator;
+// class DepthFirstFarmIterator;
+// class Farmland;
 
 class Farmland: public FarmUnit
 {
-	private: FarmUnit* farmUnits;
-	public: Client* unnamed_Client_;
-	public: FarmUnit* unnamed_FarmUnit_;
-	public: BreadthFirstFarmIterator* unnamed_BreadthFirstFarmIterator_;
-	public: DepthFirstFarmIterator* unnamed_DepthFirstFarmIterator_;
+	private: 
+		std::vector<FarmUnit*> farmUnits; 
+    	std::string name;
+
+	// public: Client* unnamed_Client_;
+	// public: FarmUnit* unnamed_FarmUnit_;
+	// public: BreadthFirstFarmIterator* unnamed_BreadthFirstFarmIterator_;
+	// public: DepthFirstFarmIterator* unnamed_DepthFirstFarmIterator_;
 
 	public: 
+		Farmland(const std::string& name);
 		~Farmland();
-		FarmUnit* addUnit();
-		FarmUnit* removeUnit();
+		 FarmUnit* addUnit(FarmUnit* unit);
+    	FarmUnit* removeUnit(FarmUnit* unit);
 		int getTotalCapacity();
 		string getCropType();
 		string getSoilStateName();
