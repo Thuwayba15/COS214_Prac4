@@ -3,7 +3,6 @@ using namespace std;
 
 #include "FarmIterator.h"
 #include "Client.h"
-#include "FarmUnit.h"
 
 FarmUnit* FarmIterator::firstFarm() {
 	throw "Not yet implemented";

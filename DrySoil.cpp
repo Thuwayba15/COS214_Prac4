@@ -5,11 +5,11 @@ using namespace std;
 #include "DrySoil.h"
 #include "FloodedSoil.h"
 
-int DrySoil::harvestCrops(CropField* cropField) {
+int DrySoil::harvestCrops(CropField* aCropField) {
 	throw "Not yet implemented";
 }
 
-void DrySoil::rain(CropField* cropField) {
+void DrySoil::rain(CropField* aCropField) {
 	throw "Not yet implemented";
 }
 

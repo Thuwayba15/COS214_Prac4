@@ -13,12 +13,15 @@ class DepthFirstFarmIterator;
 
 class DepthFirstFarmIterator: public FarmIterator
 {
-	public: 
-		// Farmland* _unnamed_Farmland_;
-		virtual FarmUnit* firstFarm();
-		virtual FarmUnit* next();
-		virtual bool isDone();
-		virtual FarmUnit* currentFarm();
+	public: Farmland* _unnamed_Farmland_;
+
+	public: virtual FarmUnit* firstFarm();
+
+	public: virtual FarmUnit* next();
+
+	public: virtual bool isDone();
+
+	public: virtual FarmUnit* currentFarm();
 };
 
 #endif

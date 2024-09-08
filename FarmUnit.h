@@ -12,29 +12,26 @@ using namespace std;
 class Truck;
 class FarmUnit;
 
-#include <string>
-
-
-class FarmUnit
+__abstract class FarmUnit
 {
-	private: 
-		string farmName;
-		Truck* observerList;
+	private: string _farmName;
+	private: Truck* _observerList;
+	public: Farmland* _unnamed_Farmland_;
+	public: Truck* _unnamed_Truck_;
 
-	public: 
-		// Farmland* unnamed_Farmland;
-		Truck* unnamed_Truck;
+	public: virtual int getTotalCapacity() = 0;
 
-	public: 
-		virtual int getTotalCapacity() = 0;
-		virtual string getCropType() = 0;
-		virtual string getSoilStateName() = 0;
-		void attach(Truck* truck);
-		void detach(Truck* truck);
-		void notify();
-		virtual ~FarmUnit(){};
+	public: virtual string getCropType() = 0;
 
-	FarmUnit();
+	public: virtual string getSoilStateName() = 0;
+
+	public: void attach(Truck* aTruck);
+
+	public: void detach(Truck* aTruck);
+
+	public: void notify();
+
+	public: FarmUnit();
 };
 
 #endif
