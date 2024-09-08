@@ -12,11 +12,10 @@ class FertilizedField;
 class FertilizedField: public CropFieldDecorator
 {
 
-	public: void increaseProduction();
-
-	public: void harvest();
-
-	public: virtual int getLeftOverCapacity();
+	public: 
+		void increaseProduction();
+		void harvest();
+		virtual int getLeftOverCapacity();
 };
 
 #endif

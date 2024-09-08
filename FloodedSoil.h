@@ -6,19 +6,18 @@ using namespace std;
 #define __FloodedSoil_h__
 
 // #include "DrySoil.h"
+#include "CropField.h"
 
 class DrySoil;
 class FloodedSoil;
 
 class FloodedSoil
 {
-	public: DrySoil* _unnamed_DrySoil_;
-
-	public: int harvestCrops(CropField* aCropField);
-
-	public: void rain(CropField* aCropField);
-
-	public: string getName();
+	public: 
+		DrySoil* _unnamed_DrySoil_;
+		int harvestCrops(CropField* cropField);
+		void rain(CropField* cropField);
+		string getName();
 };
 
 #endif

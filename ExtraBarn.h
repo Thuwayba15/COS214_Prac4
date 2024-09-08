@@ -11,15 +11,14 @@ class ExtraBarn;
 
 class ExtraBarn: public CropFieldDecorator
 {
-	private: string _extraBarnCapacity;
+	private:
+		string extraBarnCapacity;
 
-	public: void harvest();
-
-	public: void getLeftOverCapacity();
-
-	public: virtual void increaseProduction();
-
-	public: ExtraBarn();
+	public: 
+		void harvest();
+		int getLeftOverCapacity();
+		virtual void increaseProduction();
+		ExtraBarn();
 };
 
 #endif

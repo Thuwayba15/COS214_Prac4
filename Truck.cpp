@@ -17,6 +17,6 @@ void Truck::callTruck() {
 }
 
 Truck::Truck() {
-	_truckID = int;
+	// truckID = int;
 }
 

@@ -12,11 +12,10 @@ class FertilizerTruck;
 class FertilizerTruck: public Truck
 {
 
-	public: void update(CropField* aCropField);
-
-	public: void startEngine();
-
-	public: void callTruck();
+	public: 
+		void update(CropField* aCropField);
+		void startEngine();
+		void callTruck();
 };
 
 #endif

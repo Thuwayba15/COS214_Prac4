@@ -10,15 +10,14 @@ using namespace std;
 class CropField;
 class SoilState;
 
-__abstract class SoilState
+class SoilState
 {
-	public: CropField* _unnamed_CropField_;
+	// public: CropField* _unnamed_CropField_;
 
-	public: virtual int harvestCrops(CropField* aCropField) = 0;
-
-	public: virtual void rain(CropField* aCropField) = 0;
-
-	public: virtual string getName() = 0;
+	public: 
+		virtual int harvestCrops(CropField* cropField) = 0;
+		virtual void rain(CropField* cropField) = 0;
+		virtual string getName() = 0;
 };
 
 #endif

@@ -12,11 +12,10 @@ class DeliveryTruck;
 class DeliveryTruck: public Truck
 {
 
-	public: void update(CropField* aCropField);
-
-	public: void startEngine();
-
-	public: void callTruck();
+	public: 
+		void update(CropField* cropField);
+		void startEngine();
+		void callTruck();
 };
 
 #endif

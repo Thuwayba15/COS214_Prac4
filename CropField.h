@@ -16,28 +16,25 @@ class CropField;
 
 class CropField: public FarmUnit
 {
-	private: string _cropType;
-	private: int _totalCapacity;
-	private: int _currentAmount;
-	private: SoilState* _soilState;
-	public: CropFieldDecorator* _unnamed_CropFieldDecorator_;
-	public: SoilState* _unnamed_SoilState_;
+	private: 
+		std::string cropType;
+		int totalCapacity;
+		int currentAmount;
+		SoilState* soilState;
+	// public: CropFieldDecorator* _unnamed_CropFieldDecorator_;
+	// public: SoilState* _unnamed_SoilState_;
 
-	public: int getTotalCapacity();
-
-	public: string getCropType();
-
-	public: string getSoilStateName();
-
-	public: int harvestCrops();
-
-	public: void rain();
-
-	public: void setSoilState(SoilState* aNewState);
-
-	public: void buyTruck(Truck* aNewTruck);
-
-	public: void sellTruck(Truck* aTruck);
+	public: 
+		CropField(const std::string& type, int capacity, SoilState* state);
+		~CropField();
+		int getTotalCapacity();
+		std::string getCropType();
+		std::string getSoilStateName();
+		int harvestCrops();
+		void rain();
+		void setSoilState(SoilState* newState);
+		void buyTruck(Truck* newTruck);
+		void sellTruck(Truck* truck);
 };
 
 #endif
