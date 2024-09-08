@@ -1,11 +1,16 @@
 #include <exception>
 #include <string>
+#include <iostream>
 using namespace std;
 
 #include "CropField.h"
 #include "CropFieldDecorator.h"
 #include "SoilState.h"
 #include "FarmUnit.h"
+
+CropField::CropField() : cropType("Unknown"), totalCapacity(0), currentAmount(0), soilState(nullptr) {
+    std::cout << "" << std::endl;
+}
 
 CropField::CropField(const std::string& type, int capacity, SoilState* state)
     : cropType(type), totalCapacity(capacity), currentAmount(0), soilState(state) {}
@@ -26,16 +31,35 @@ string CropField::getSoilStateName() {
 	return soilState->getName();
 }
 
+// Add crops to the field
+void CropField::growCrops(int amount) {
+    currentAmount += amount;
+    if (currentAmount > totalCapacity) {
+        currentAmount = totalCapacity;  
+    }
+}
+
+
 int CropField::harvestCrops() {
-	throw "Not yet implemented";
+    if (currentAmount == 0) {
+        std::cout << "No crops available for harvesting!" << std::endl;
+        return 0;
+    }
+
+    int harvestedAmount = soilState->harvestCrops(this);
+    currentAmount -= harvestedAmount;
+    return harvestedAmount;
 }
 
 void CropField::rain() {
-	throw "Not yet implemented";
+    soilState->rain(this);
 }
 
 void CropField::setSoilState(SoilState* newState) {
-	this->soilState = newState;
+    if (soilState != newState) {
+        delete this->soilState;
+        this->soilState = newState;
+    }
 }
 
 void CropField::buyTruck(Truck* newTruck) {

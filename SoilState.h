@@ -15,6 +15,7 @@ class SoilState
 	// public: CropField* _unnamed_CropField_;
 
 	public: 
+		virtual ~SoilState() {};
 		virtual int harvestCrops(CropField* cropField) = 0;
 		virtual void rain(CropField* cropField) = 0;
 		virtual string getName() = 0;

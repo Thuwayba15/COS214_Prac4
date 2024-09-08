@@ -7,14 +7,15 @@ using namespace std;
 
 // #include "DrySoil.h"
 #include "CropField.h"
+#include "SoilState.h"
 
 class DrySoil;
 class FloodedSoil;
 
-class FloodedSoil
+class FloodedSoil : public SoilState
 {
 	public: 
-		DrySoil* _unnamed_DrySoil_;
+		// DrySoil* _unnamed_DrySoil_;
 		int harvestCrops(CropField* cropField);
 		void rain(CropField* cropField);
 		string getName();
