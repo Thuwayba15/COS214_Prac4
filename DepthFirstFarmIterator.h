@@ -1,4 +1,5 @@
 #include <exception>
+#include <stack>
 using namespace std;
 
 #ifndef __DepthFirstFarmIterator_h__
@@ -13,12 +14,20 @@ class DepthFirstFarmIterator;
 
 class DepthFirstFarmIterator: public FarmIterator
 {
+
+	private:
+		Farmland* farmland;  // The farmland we are iterating over
+		std::stack<FarmUnit*> farmStack;  // Stack for depth-first traversal
+		FarmUnit* current;  // Current farm unit being visited
+
+
 	public: 
-		// Farmland* _unnamed_Farmland_;
-		virtual FarmUnit* firstFarm();
-		virtual FarmUnit* next();
-		virtual bool isDone();
-		virtual FarmUnit* currentFarm();
+		DepthFirstFarmIterator(Farmland* farmland);
+
+		FarmUnit* firstFarm() override;
+		FarmUnit* next() override;
+		bool isDone() override;
+		FarmUnit* currentFarm() override;
 };
 
 #endif

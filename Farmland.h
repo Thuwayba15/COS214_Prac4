@@ -20,14 +20,9 @@ using namespace std;
 
 class Farmland: public FarmUnit
 {
-	private: 
+	public: 
 		std::vector<FarmUnit*> farmUnits; 
     	std::string name;
-
-	// public: Client* unnamed_Client_;
-	// public: FarmUnit* unnamed_FarmUnit_;
-	// public: BreadthFirstFarmIterator* unnamed_BreadthFirstFarmIterator_;
-	// public: DepthFirstFarmIterator* unnamed_DepthFirstFarmIterator_;
 
 	public: 
 		Farmland(const std::string& name);
