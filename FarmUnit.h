@@ -1,5 +1,8 @@
 #include <exception>
 #include <string>
+#include <iostream>
+#include <algorithm>
+#include <vector>
 using namespace std;
 
 #ifndef __FarmUnit_h__
@@ -7,6 +10,7 @@ using namespace std;
 
 // #include "Farmland.h"
 // #include "Truck.h"
+#include "FarmTypes.h"
 
 // class Farmland;
 class Truck;
@@ -19,11 +23,7 @@ class FarmUnit
 {
 	private: 
 		string farmName;
-		Truck* observerList;
-
-	public: 
-		// Farmland* unnamed_Farmland;
-		// Truck* unnamed_Truck;
+		std::vector<Truck*> observerList;
 
 	public: 
 		virtual int getTotalCapacity() = 0;
@@ -31,7 +31,7 @@ class FarmUnit
 		virtual string getSoilStateName() = 0;
 		void attach(Truck* truck);
 		void detach(Truck* truck);
-		void notify();
+		void notify(CropField* field);
 		virtual ~FarmUnit(){};
 
 	// FarmUnit();

@@ -1,12 +1,14 @@
 #include <exception>
 #include <string>
 #include <iostream>
+#include <algorithm>
 using namespace std;
 
 #include "CropField.h"
 #include "CropFieldDecorator.h"
 #include "SoilState.h"
 #include "FarmUnit.h"
+#include "Truck.h"
 
 CropField::CropField() : cropType("Unknown"), totalCapacity(0), currentAmount(0), soilState(nullptr) {
     std::cout << "" << std::endl;
@@ -63,10 +65,17 @@ void CropField::setSoilState(SoilState* newState) {
 }
 
 void CropField::buyTruck(Truck* newTruck) {
-	throw "Not yet implemented";
+    trucks.push_back(newTruck);
+    std::cout << "Truck bought and registered." << std::endl;
 }
 
 void CropField::sellTruck(Truck* truck) {
-	throw "Not yet implemented";
+    trucks.erase(std::remove(trucks.begin(), trucks.end(), truck), trucks.end());
+    std::cout << "Truck sold and unregistered." << std::endl;
 }
 
+void CropField::notifyTrucks(CropField* event) {
+    for (Truck* truck : trucks) {
+        truck->update(event);  // Notify each truck about the event
+    }
+}

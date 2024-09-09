@@ -12,7 +12,8 @@ class DeliveryTruck;
 class DeliveryTruck: public Truck
 {
 
-	public: 
+	public:
+		DeliveryTruck(const std::string& id); 
 		void update(CropField* cropField);
 		void startEngine();
 		void callTruck();

@@ -13,6 +13,7 @@ class FertilizerTruck: public Truck
 {
 
 	public: 
+		FertilizerTruck(const std::string& id); 
 		void update(CropField* aCropField);
 		void startEngine();
 		void callTruck();

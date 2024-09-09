@@ -1,5 +1,7 @@
 #include <exception>
 #include <string>
+#include <iostream>
+#include <vector>
 using namespace std;
 
 #ifndef __CropField_h__
@@ -8,10 +10,13 @@ using namespace std;
 // #include "CropFieldDecorator.h"
 // #include "SoilState.h"
 #include "FarmUnit.h"
+// #include "Truck.h"
+
+#include "FarmTypes.h"
 
 // class CropFieldDecorator;
 class SoilState;
-// class FarmUnit;
+class FarmUnit;
 
 class CropField: public FarmUnit
 {
@@ -20,14 +25,13 @@ class CropField: public FarmUnit
 		int totalCapacity;
 		int currentAmount;
 		SoilState* soilState;
-	// public: CropFieldDecorator* _unnamed_CropFieldDecorator_;
-	// public: SoilState* _unnamed_SoilState_;
+		std::vector<Truck*> trucks; 
+		 
 
 	public: 
+	
 		CropField(const std::string& type, int capacity, SoilState* state);
-
 		CropField();
-
 		virtual ~CropField();
 		int getTotalCapacity();
 		std::string getCropType();
@@ -39,6 +43,7 @@ class CropField: public FarmUnit
 		void setSoilState(SoilState* newState);
 		void buyTruck(Truck* newTruck);
 		void sellTruck(Truck* truck);
+		void notifyTrucks(CropField* event);
 };
 
 #endif
