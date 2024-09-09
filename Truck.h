@@ -8,12 +8,14 @@ using namespace std;
 #include <string>
 #include "CropField.h"
 
+class CropField;
+
 class FarmUnit;
 class Truck;
 
 class Truck
 {
-	private: 
+	protected: 
 		string truckID;
 	// public: FarmUnit* _unnamed_FarmUnit_;
 
@@ -21,7 +23,8 @@ class Truck
 		virtual void update(CropField* cropField) = 0;
 		virtual void startEngine() = 0;
 		virtual void callTruck() = 0;
-		Truck();
+		Truck(const std::string& id);
+		virtual ~Truck(){};
 };
 
 #endif
