@@ -5,6 +5,7 @@ using namespace std;
 #define __FertilizedField_h__
 
 #include "CropFieldDecorator.h"
+#include "CropField.h"
 
 class FertilizedField: public CropFieldDecorator
 {
